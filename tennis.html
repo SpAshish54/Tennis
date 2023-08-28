@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Game</title>
+</head>
+<body>
+<div class="tennis-court">
+    <div class="tennis-ball"></div>
+    <div class="paddle paddle-left"></div>
+    <div class="paddle paddle-right"></div>
+</div>
+
+<div class="scoreboard">
+    <div class="player-scores">
+        <span class="player-score" th:text="${'Player 1: ' + scoreNames[scorePlayer1]}"></span>
+        <span class="player-score" th:text="${'Player 2: ' + scoreNames[scorePlayer2]}"></span>
+    </div>
+    <div class="set-points">
+        <span class="set-point" th:text="${'Set: ' + setPlayer1}"></span>
+        <span class="set-point" th:text="${'Set: ' + setPlayer2}"></span>
+    </div>
+    <div class="match-points">
+        <span class="match-point" th:text="${'Match: ' + matchPlayer1}"></span>
+        <span class="match-point" th:text="${'Match: ' + matchPlayer2}"></span>
+    </div>
+    <form method="post" action="tennis">
+        <button type="submit" name="player" value="1">Player 1 Score</button>
+        <button type="submit" name="player" value="2">Player 2 Score</button>
+    </form>
+</div>
+</body>
+</html>
